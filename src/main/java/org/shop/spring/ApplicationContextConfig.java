@@ -1,9 +1,7 @@
-package org.shop.rest.spring;
+package org.shop.spring;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import javax.annotation.Resource;
 
 @Configuration
 @ComponentScan("org.shop")

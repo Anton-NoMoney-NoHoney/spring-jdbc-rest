@@ -24,25 +24,25 @@ public class OrderServiceImpl implements OrdersService {
     }
 
     @Override
-    public List<OrderDto> findAll() throws SQLException {
+    public List<OrderDto> findAll()   {
         return ordersRepository.findAll().stream().map(OrderEntity::toDto).collect(Collectors.toList());
     }
 
     @Override
-    public OrderDto findOrderBy(long id) throws SQLException {
+    public OrderDto findOrderBy(long id)   {
 
         OrderEntity entity=ordersRepository.findById(id);
         return entity.toDto();
     }
 
     @Override
-    public void saveOrder(OrderDto orderDto) throws SQLException {
+    public void saveOrder(OrderDto orderDto)  {
         OrderEntity entity=OrderEntity.toEntity(orderDto);
         ordersRepository.saveOrderEntity(entity);
     }
 
     @Override
-    public void deleteOrder(long orderId) throws SQLException {
+    public void deleteOrder(long orderId)  {
         Long orderDetailId=ordersRepository.getOrderIdInOrders(orderId);
         ordersRepository.deleteOrderEntity(orderId);
         orderDetailsRepository.deleteOrderDetailEntity(orderDetailId);

@@ -1,8 +1,11 @@
 package org.shop.service;
 
 import org.shop.dto.OrderDto;
+import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.List;
+
 
 public interface OrdersService {
 
@@ -16,11 +19,11 @@ public interface OrdersService {
      * @param id - order unique identifier
      * @return order and its' details
      */
-    OrderDto findOrderBy(long id);
+    OrderDto findOrderBy(long id) ;
 
-    void saveOrder(OrderDto orderDto);
+    void saveOrder(OrderDto orderDto) ;
 
-    void deleteOrder(long orderId);
+    void deleteOrder(long orderId) ;
 
 //     THESE methods should be implemented optionally only if you finished your task early
 //    /**
