@@ -14,8 +14,6 @@ public class OrdersRepositoryImpl  implements OrdersRepository {
 
 
     private  String DB_URL = "jdbc:mysql://localhost:3306/skillsup?serverTimezone=UTC";
-
-
     private  String USER = "root";
     private  String PASS = "killall";
 
@@ -24,7 +22,6 @@ public class OrdersRepositoryImpl  implements OrdersRepository {
 
 
     public OrdersRepositoryImpl()  {
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -32,7 +29,6 @@ public class OrdersRepositoryImpl  implements OrdersRepository {
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
-
     }
 
 
@@ -127,7 +123,6 @@ public class OrdersRepositoryImpl  implements OrdersRepository {
         ResultSet rs = null;
         try {
             rs = stmt.executeQuery(" select t.order_id from orders t where t.id="+id+"");
-
         while (rs.next()){ ids=rs.getLong("t.order_id");}
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -12,8 +12,6 @@ import java.sql.Statement;
 public class OrderDetailsRepositoryImpl implements OrderDetailsRepository {
 
     private  String DB_URL = "jdbc:mysql://localhost:3306/skillsup?serverTimezone=UTC";
-
-
     private  String USER = "root";
     private  String PASS = "killall";
 
